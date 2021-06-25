@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:background="@drawable/bg_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="1"
+        android:layout_marginEnd="@dimen/dp_10"/>
+    <EditText
+        android:id="@+id/txtSearch"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:autofillHints="Search github user profile"
+        android:background="@drawable/bg_txt"
+        android:singleLine="true"
+        android:elevation="4dp"
+        android:hint="Search github user profile"
+        android:inputType="text"
+        android:textSize="@dimen/sp20"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintEnd_toStartOf="@+id/btnSearch"
+        app:layout_constraintTop_toTopOf="@+id/btnSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:orientation="horizontal"
+        app:layout_constraintVertical_bias="0"
+        app:constraint_referenced_ids="txtSearch,btnSearch"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.9"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flow"
+        app:layout_constraintVertical_bias="1.0" >
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_result_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
